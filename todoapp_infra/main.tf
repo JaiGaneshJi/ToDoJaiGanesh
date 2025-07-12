@@ -69,20 +69,20 @@ module "backend_public_ip" {
 
 
 module "vm" {
-  source              = "../Modules/azurerm_virtual_machine"
-  depends_on          = [module.frontend_subnet, module.frontend_Public_ip]
-  nic_name = "faadu-nic"
-  location = "australiaeast"
-  resource_group_name = "faadu-rg"
-  vm_name = "frontend-vm"
-  vm_size = "Standard_B1s"
-  admin_username = "todo"
-  admin_password = "Nokia@123"
-  image_publisher = "Canonical"
-  image_offer = "0001-com-ubuntu-server-focal"
-  image_sku = "20_04-lts"
-  image_version = "latest"
-  frontend_pip_name = "frontend-pip"
+  source               = "../Modules/azurerm_virtual_machine"
+  depends_on           = [module.frontend_subnet, module.frontend_Public_ip]
+  nic_name             = "faadu-nic"
+  location             = "australiaeast"
+  resource_group_name  = "faadu-rg"
+  vm_name              = "frontend-vm"
+  vm_size              = "Standard_B1s"
+  admin_username       = "todo"
+  admin_password       = "Nokia@123"
+  image_publisher      = "Canonical"
+  image_offer          = "0001-com-ubuntu-server-focal"
+  image_sku            = "20_04-lts"
+  image_version        = "latest"
+  frontend_pip_name    = "frontend-pip"
   frontend_subnet_name = "frontend_subnet"
-  vnet_name = "faadu-vnet"
+  vnet_name            = "faadu-vnet"
 }
